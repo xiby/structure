@@ -31,4 +31,13 @@ public class HuffmanTreeTest {
         HuffmanTree<String> huffmanTree = getStringHuffmanTree();
         System.out.println(huffmanTree.huffmanCode("0", "1"));
     }
+
+    @Test
+    public void huffmanDecode() {
+        HuffmanTree<String> huffmanTree = getStringHuffmanTree();
+        String code = "00000001001011011011101111";
+        String decode = "GAHFBECD";
+        List<String> result = huffmanTree.huffmanDecode(code, '0', '1');
+        System.out.println(result);
+    }
 }

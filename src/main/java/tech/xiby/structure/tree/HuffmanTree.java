@@ -62,6 +62,34 @@ public class HuffmanTree<T> {
         return result;
     }
 
+    public List<T> huffmanDecode(String code, Character left, Character right) {
+        BinaryTreeNode<T> current = root;
+        int index = 0;
+        List<T> result = Lists.newArrayList();
+        while (index <= code.length()) {
+            if (current == null) {
+                throw new IllegalArgumentException();
+            }
+            if (current.isLeafNode()) {
+                result.add(current.val);
+                if (index >= code.length()) {
+                    break;
+                }
+                current = root;
+                continue;
+            }
+            Character ch = code.charAt(index++);
+            if (left.equals(ch)) {
+                current = current.lchild;
+            } else if (right.equals(ch)) {
+                current = current.rchild;
+            } else {
+                throw new IllegalArgumentException();
+            }
+        }
+        return result;
+    }
+
     /**
      * 递归进行哈夫曼编码
      *
