@@ -11,11 +11,6 @@ public class HuffmanTreeNode<T> extends BinaryTreeNode<T> {
      */
     public double weight;
 
-    /**
-     * 数据字段
-     */
-    public T data;
-
     public HuffmanTreeNode(double weight, T data) {
         super(data);
         this.weight = weight;
