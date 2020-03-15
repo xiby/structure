@@ -26,4 +26,13 @@ public class BinaryTreeNode<T> {
         lchild = null;
         rchild = null;
     }
+
+    /**
+     * 判断是否为叶子节点
+     *
+     * @return
+     */
+    public boolean isLeafNode() {
+        return lchild == null && rchild == null;
+    }
 }
