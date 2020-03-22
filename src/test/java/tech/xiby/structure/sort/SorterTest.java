@@ -60,4 +60,13 @@ public class SorterTest {
         }
         System.out.println("冒泡排序耗时：" + (System.currentTimeMillis() - start) + " 毫秒");
     }
+
+    @Test
+    public void selectSortTest() {
+        Integer[] nums = {0, 2, 5, 3, 1, 7, 9, 8, 4, 6};
+        Sorter.selectSort(nums, ((num1, num2) -> num1 > num2));
+        for (int i = 0; i < 10; ++i) {
+            System.out.println(nums[i]);
+        }
+    }
 }
