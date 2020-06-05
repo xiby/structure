@@ -23,4 +23,22 @@ public class BinaryTreeTest {
         tree.preVisit((node) -> System.out.println(node.val));
     }
 
+    @Test
+    public void preVisitUnrecursive() {
+        BinaryTree<Integer> tree = new BinaryTree<>(datas, VisitMethod.PRE_ORDER);
+        tree.preVisiUnRecursive((node) -> System.out.println(node.val));
+    }
+
+    @Test
+    public void midVisitUnRecursive() {
+        BinaryTree<Integer> tree = new BinaryTree<>(datas, VisitMethod.PRE_ORDER);
+        tree.midVisitUnRecursive((node -> System.out.println(node.val)));
+    }
+
+    @Test
+    public void postVisitUnRecursive() {
+        BinaryTree<Integer> tree = new BinaryTree<>(datas, VisitMethod.PRE_ORDER);
+        tree.postVisitUnRecursive((node -> System.out.println(node.val)));
+    }
+
 }
